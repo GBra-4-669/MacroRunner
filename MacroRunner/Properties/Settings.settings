@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MacroRunner.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ChromePATH" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\Google\Chrome\Application\chrome.exe</Value>
+    </Setting>
+    <Setting Name="XModulePATH" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\UIVision\macros</Value>
+    </Setting>
+    <Setting Name="MacroPATH" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\UIVision\macros</Value>
+    </Setting>
+    <Setting Name="CustomVar1" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CustomVar2" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LastSelectedMacro" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
