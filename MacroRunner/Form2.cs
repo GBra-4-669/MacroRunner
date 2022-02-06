@@ -7,22 +7,23 @@ namespace MacroRunner
         public Form2()
         {
             InitializeComponent();
-            CustomVarTextBox1.Text = Properties.Settings.Default.CustomVar1;
-            CustomVarTextBox2.Text = Properties.Settings.Default.CustomVar2;
-            ChromeTextBox.Text = Properties.Settings.Default.ChromePATH;
-            XModuleTextBox.Text = Properties.Settings.Default.XModulePATH;
-            MacroTextBox.Text = Properties.Settings.Default.MacroPATH;
+            var props = Properties.Settings.Default;
+            CustomVarTextBox1.Text = props.CustomVar1;
+            CustomVarTextBox2.Text = props.CustomVar2;
+            ChromeTextBox.Text = props.ChromePATH;
+            XModuleTextBox.Text = props.XModulePATH;
+            MacroTextBox.Text = props.MacroPATH;
         }
 
         private void BtnSaveChanges_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.CustomVar1 = CustomVarTextBox1.Text;
-            Properties.Settings.Default.CustomVar2 = CustomVarTextBox2.Text;
-            Properties.Settings.Default.ChromePATH = ChromeTextBox.Text;
-            Properties.Settings.Default.ChromePATH = ChromeTextBox.Text;
-            Properties.Settings.Default.MacroPATH = MacroTextBox.Text;
-            Properties.Settings.Default.Save();
-            Close();
+            var props = Properties.Settings.Default;
+            props.CustomVar1 = CustomVarTextBox1.Text;
+            props.CustomVar2 = CustomVarTextBox2.Text;
+            props.ChromePATH = ChromeTextBox.Text;
+            props.XModulePATH = XModuleTextBox.Text;
+            props.MacroPATH = MacroTextBox.Text;
+            props.Save();
         }
 
         private void BtnDiscardChanges_Click(object sender, EventArgs e)

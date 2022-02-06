@@ -11,14 +11,29 @@ namespace MacroRunner
 
         private void MacroRunner_Load(object sender, EventArgs e)
         {
-            string[] files = Directory.GetFiles(Properties.Settings.Default.MacroPATH, "*.json")
-                .Select(file => Path.GetFileName(file)).ToArray();
-            MacroListBox.DataSource = files;
-            int index = MacroListBox.FindString(Properties.Settings.Default.LastSelectedMacro);
-            if (MacroListBox.Items.Count > 0)
+            LoadMacrosFromPath();
+        }
+
+        private void LoadMacrosFromPath()
+        {
+            try
             {
-                MacroListBox.SetSelected(index == -1 ? 0 : index, true);
+                string[] files = Directory.GetFiles(Properties.Settings.Default.MacroPATH, "*.json").Select(file => Path.GetFileName(file)).ToArray();
+                if (files.Length > 0)
+                {
+                    MacroListBox.DataSource = files;
+                    int index = MacroListBox.FindString(Properties.Settings.Default.LastSelectedMacro);
+                    if (MacroListBox.Items.Count > 0)
+                    {
+                        MacroListBox.SetSelected(index == -1 ? 0 : index, true);
+                    }
+                }
             }
+            catch (DirectoryNotFoundException dirEx)
+            {
+                MessageBox.Show(dirEx.Message);
+            }
+
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -28,13 +43,17 @@ namespace MacroRunner
 
         private void BtnRefreshFiles_Click(object sender, EventArgs e)
         {
-            MacroRunner_Load(sender, e);
+            LoadMacrosFromPath();
         }
 
         private void BtnSetPaths_Click(object sender, EventArgs e)
         {
             Form2 settingsForm = new();
-            settingsForm.Show();
+            if (settingsForm.ShowDialog() == DialogResult.OK)
+            {
+                LoadMacrosFromPath();
+            }
+            settingsForm.Dispose();
         }
 
         private void BtnExecute_Click(object sender, EventArgs e)

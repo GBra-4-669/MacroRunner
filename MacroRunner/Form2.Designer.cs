@@ -59,10 +59,11 @@
             // 
             // ChromeTextBox
             // 
+            this.ChromeTextBox.CausesValidation = false;
             this.ChromeTextBox.Location = new System.Drawing.Point(12, 205);
             this.ChromeTextBox.Name = "ChromeTextBox";
             this.ChromeTextBox.Size = new System.Drawing.Size(570, 27);
-            this.ChromeTextBox.TabIndex = 1;
+            this.ChromeTextBox.TabIndex = 4;
             // 
             // chromeTextLabel
             // 
@@ -87,7 +88,7 @@
             this.XModuleTextBox.Location = new System.Drawing.Point(12, 273);
             this.XModuleTextBox.Name = "XModuleTextBox";
             this.XModuleTextBox.Size = new System.Drawing.Size(570, 27);
-            this.XModuleTextBox.TabIndex = 7;
+            this.XModuleTextBox.TabIndex = 5;
             // 
             // MacroPathTextLabel
             // 
@@ -103,7 +104,7 @@
             this.MacroTextBox.Location = new System.Drawing.Point(12, 142);
             this.MacroTextBox.Name = "MacroTextBox";
             this.MacroTextBox.Size = new System.Drawing.Size(570, 27);
-            this.MacroTextBox.TabIndex = 9;
+            this.MacroTextBox.TabIndex = 3;
             // 
             // labelVariable1
             // 
@@ -119,14 +120,14 @@
             this.CustomVarTextBox1.Location = new System.Drawing.Point(12, 81);
             this.CustomVarTextBox1.Name = "CustomVarTextBox1";
             this.CustomVarTextBox1.Size = new System.Drawing.Size(302, 27);
-            this.CustomVarTextBox1.TabIndex = 13;
+            this.CustomVarTextBox1.TabIndex = 1;
             // 
             // CustomVarTextBox2
             // 
             this.CustomVarTextBox2.Location = new System.Drawing.Point(336, 81);
             this.CustomVarTextBox2.Name = "CustomVarTextBox2";
             this.CustomVarTextBox2.Size = new System.Drawing.Size(301, 27);
-            this.CustomVarTextBox2.TabIndex = 14;
+            this.CustomVarTextBox2.TabIndex = 2;
             // 
             // labelVariable2
             // 
@@ -152,7 +153,7 @@
             this.MacroPathDialog.Name = "MacroPathDialog";
             this.MacroPathDialog.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.MacroPathDialog.Size = new System.Drawing.Size(58, 27);
-            this.MacroPathDialog.TabIndex = 16;
+            this.MacroPathDialog.TabIndex = 8;
             this.MacroPathDialog.UseVisualStyleBackColor = true;
             this.MacroPathDialog.Click += new System.EventHandler(this.MacroPathDialog_Click);
             // 
@@ -167,8 +168,9 @@
             this.XModulePathDialog.Name = "XModulePathDialog";
             this.XModulePathDialog.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.XModulePathDialog.Size = new System.Drawing.Size(58, 27);
-            this.XModulePathDialog.TabIndex = 17;
+            this.XModulePathDialog.TabIndex = 10;
             this.XModulePathDialog.UseVisualStyleBackColor = true;
+            this.XModulePathDialog.Click += new System.EventHandler(this.XModulePathDialog_Click);
             // 
             // ChromePathDialog
             // 
@@ -185,7 +187,7 @@
             this.ChromePathDialog.Name = "ChromePathDialog";
             this.ChromePathDialog.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.ChromePathDialog.Size = new System.Drawing.Size(58, 27);
-            this.ChromePathDialog.TabIndex = 18;
+            this.ChromePathDialog.TabIndex = 9;
             this.ChromePathDialog.UseVisualStyleBackColor = true;
             this.ChromePathDialog.Click += new System.EventHandler(this.ChromePathDialog_Click);
             // 
@@ -195,6 +197,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnSaveChanges.BackColor = System.Drawing.Color.Lime;
+            this.BtnSaveChanges.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnSaveChanges.FlatAppearance.BorderSize = 4;
             this.BtnSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnSaveChanges.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -206,7 +209,7 @@
             this.BtnSaveChanges.Name = "BtnSaveChanges";
             this.BtnSaveChanges.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.BtnSaveChanges.Size = new System.Drawing.Size(302, 71);
-            this.BtnSaveChanges.TabIndex = 19;
+            this.BtnSaveChanges.TabIndex = 6;
             this.BtnSaveChanges.Text = "SAVE CHANGES";
             this.BtnSaveChanges.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnSaveChanges.UseVisualStyleBackColor = false;
@@ -230,7 +233,7 @@
             this.BtnDiscardChanges.Name = "BtnDiscardChanges";
             this.BtnDiscardChanges.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.BtnDiscardChanges.Size = new System.Drawing.Size(302, 71);
-            this.BtnDiscardChanges.TabIndex = 20;
+            this.BtnDiscardChanges.TabIndex = 7;
             this.BtnDiscardChanges.Text = "DISCARD CHANGES";
             this.BtnDiscardChanges.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnDiscardChanges.UseVisualStyleBackColor = false;
@@ -238,6 +241,9 @@
             // 
             // Form2
             // 
+            this.AcceptButton = this.BtnSaveChanges;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CancelButton = this.BtnDiscardChanges;
             this.ClientSize = new System.Drawing.Size(658, 403);
             this.Controls.Add(this.BtnDiscardChanges);
             this.Controls.Add(this.BtnSaveChanges);
